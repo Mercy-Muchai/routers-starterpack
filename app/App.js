@@ -5,10 +5,15 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
+      <Router history={hashHistory}>
+        <Route path='/' component={Home} />
+        <Route path='/address' component={Address} />
+        <Route path='*' component={NotFound} />
+      </Router>
     )
   }
 }
 
+const Home = () => <h1> Hello World! </h1>
+const Address = () => <h1> We are located at Kindaruma Road </h1>
+const NotFound = () => <h1> This page is not found! </h1>

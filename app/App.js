@@ -32,9 +32,9 @@ const Address = (props) => <div>
 </div>
 const NotFound = () => <h1> This page is not found! </h1>
 const Nav = () => <div>
-  <IndexLink activeStyle = {{color: '#00ffff'}} to='/'>Home</IndexLink>&nbsp;
-  <IndexLink activeStyle = {{color: '#53acff'}} to='/address'>Address</IndexLink>&nbsp;
-  <IndexLink activeStyle = {{color: '53acff'}} to='/about'>About</IndexLink>
+  <IndexLink activeClassName = 'active' to='/'>Home</IndexLink>&nbsp;
+  <IndexLink activeClassName= 'active' to='/address'>Address</IndexLink>&nbsp;
+  <IndexLink activeClassName = 'active 'to='/about'>About</IndexLink>
 </div>
 const Container = (props) => <div> <Nav /> {props.children} </div>
 const Instagram = () => <h3> Instagram Feed </h3>

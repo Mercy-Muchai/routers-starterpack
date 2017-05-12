@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Router, Route, Link, IndexLink, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
 export default class App extends React.Component {
   render() {
@@ -9,6 +9,7 @@ export default class App extends React.Component {
         <Route path='/' component={Container}>
           <IndexRoute component={Home} />
           <Route path='address' component={Address} />
+          <Route path='about' component={About} />
           <Route path='twitter' component={TwitterFeed} />
           <Route path='instagram' component={Instagram} />
           <Route path='*' component={NotFound} />
@@ -19,6 +20,7 @@ export default class App extends React.Component {
 }
 
 const Home = () => <h1> Hello World! </h1>
+const About = () => <h1> We are located at Kindaruma Road </h1>
 const Address = (props) => <div>
   <br />
   <Link to='/address'>Twitter Feed</Link>&nbsp;
@@ -30,8 +32,9 @@ const Address = (props) => <div>
 </div>
 const NotFound = () => <h1> This page is not found! </h1>
 const Nav = () => <div>
-  <Link to='/'>Home</Link>&nbsp;
-  <Link to='/address'>Address</Link>
+  <IndexLink activeStyle = {{color: '#00ffff'}} to='/'>Home</IndexLink>&nbsp;
+  <IndexLink activeStyle = {{color: '#53acff'}} to='/address'>Address</IndexLink>&nbsp;
+  <IndexLink activeStyle = {{color: '53acff'}} to='/about'>About</IndexLink>
 </div>
 const Container = (props) => <div> <Nav /> {props.children} </div>
 const Instagram = () => <h3> Instagram Feed </h3>
